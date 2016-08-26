@@ -1,0 +1,18 @@
+/**
+ * CSS Settings File
+ *
+ * When you don't like inline CSS in your HTML like me, include this file and change all css rules
+ * to your liking.
+ *
+ * This file is used when the option "inlineCss: false" is provided in the simplePopup function.
+ */
+.simple-popup-content {
+    width: 600px;
+    height: auto;
+    background: #fff;
+}
+
+.simple-popup-backdrop-content {
+    opacity: 0.9;
+    background: #000;
+}
