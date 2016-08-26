@@ -56,7 +56,11 @@
             backdropBackground: "#000",     // Backdrop background (any css here)
             inlineCss: true,                // Inject CSS via JS
             escapeKey: true,                // Close popup when "escape" is pressed"
-            closeCross: true                // Display a closing cross
+            closeCross: true,               // Display a closing cross
+            beforeOpen: function(content){},
+            afterOpen: function(content){},
+            beforeClose: function(content){},
+            afterClose: function(){}
         }, options );
 
         /**
@@ -235,7 +239,13 @@
 
             html.append(content);
 
+            // Call the beforeOpen callback
+            settings.beforeOpen(html);
+
             $("body").append(html);
+
+            // Call the afterOpen callback
+            settings.afterOpen(html);
 
             // Use a timeout, else poor CSS is to slow to see the difference
             setTimeout(function() {
@@ -252,6 +262,10 @@
          * 
          */
         function stopPopup() {
+            // Call the beforeClose callback
+            var html = $("#simple-popup").html();
+            settings.beforeClose(html);
+
             $("#simple-popup").addClass("hide-it");
 
             // Poll to check if the popup is faded out
@@ -269,6 +283,9 @@
             if (settings.escapeKey) {
                 unbindEscape();
             }
+
+            // Call the afterClose callback
+            settings.afterClose();
         }
 
         /**
