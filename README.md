@@ -21,15 +21,13 @@ Call the `simpleProduct()` function on a jQuery selector and pass in an `options
     $('a.open-popup-link').simpleProduct(options);
 ```
 
-**Option 1 (inline text)**
-Open simple text in the popup.
+**Option 1: inline text** Open simple text in the popup.
 
 ```html
     <a class="open-popup-link" data-content="Hey there!">Click</a>
 ```
 
-**Option 2 (HTML block)**
-Open simple text in the popup.
+**Option 2: HTML block** Open a specific HTML block as popup content
 
 ```html
     <a class="open-popup-link">Click</a>
