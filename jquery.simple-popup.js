@@ -211,7 +211,7 @@
 
             var html = $("<div/>", {
                 "id": "simple-popup",
-                "class": "hidden"
+                "class": "hide-it"
             });
 
             if (settings.inlineCss) {
@@ -239,7 +239,7 @@
 
             // Use a timeout, else poor CSS is to slow to see the difference
             setTimeout(function() {
-                $("#simple-popup").removeClass("hidden");
+                $("#simple-popup").removeClass("hide-it");
             });
         }
 
@@ -252,7 +252,7 @@
          * 
          */
         function stopPopup() {
-            $("#simple-popup").addClass("hidden");
+            $("#simple-popup").addClass("hide-it");
 
             // Poll to check if the popup is faded out
             var intervalId = setInterval(function() {
@@ -318,7 +318,7 @@
          * 
          */
         function stopBackdrop() {
-            $("#simple-popup-backdrop").addClass("hidden");
+            $("#simple-popup-backdrop").addClass("hide-it");
 
             // Poll to check if the popup is faded out
             var intervalId = setInterval(function() {
@@ -342,7 +342,7 @@
 
             var html = $("<div/>", {
                 "id": "simple-popup-backdrop",
-                "class": "hidden"
+                "class": "hide-it"
             });
 
             if (settings.inlineCss) {
@@ -355,7 +355,7 @@
 
             // Use a timeout, else poor CSS doesn"t see the difference
             setTimeout(function() {
-                $("#simple-popup-backdrop").removeClass("hidden");
+                $("#simple-popup-backdrop").removeClass("hide-it");
             });
         }
 
