@@ -14,8 +14,34 @@ Call the `simpleProduct()` function on a jQuery selector and pass in an `options
 
 ```javascript
     var options = {
-        "escapeKey": false,
-        "closeCross": false
+        escapeKey: false,
+        closeCross: false
+    };
+
+    $('a.open-popup-link').simpleProduct(options);
+```
+
+**Option 1 (inline text)**
+Open simple text in the popup.
+
+```html
+    <a class="open-popup-link" data-content="Hey there!">Click</a>
+```
+
+**Option 2 (HTML block)**
+Open simple text in the popup.
+
+```html
+    <a class="open-popup-link">Click</a>
+    <div id="popup">
+        <p>Hey there!</p>
+    </div>
+```
+
+```javascript
+    var options = {
+        type: "html",
+        htmlSelector: "#popup",
     };
 
     $('a.open-popup-link').simpleProduct(options);
