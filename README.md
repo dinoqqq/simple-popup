@@ -1,5 +1,6 @@
 # Simple Popup (jQuery) 
-A simple, clean popup written with jQuery, works out of the box. When you don't like inline CSS or centering a popup with JS, like me, try it out. A popup filled with data from a data attribute on HTML tag also supported.
+A simple, clean popup written with jQuery, works out of the box. When you don't like inline CSS or centering a popup with JS, like me, try it out. A popup filled with data from a data attribute on HTML tag also supported.<br><br>
+[Check out the demo's](https://daankuijsten.github.io/simple-popup/)
 
 ## Features
 - Flexible and configurable
