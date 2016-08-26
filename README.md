@@ -10,7 +10,7 @@ A simple, clean popup written with jQuery, works out of the box. When you don't 
 - Optional: don't inject inline CSS with JS
 
 ## Usage
-Call the `simpleProduct()` function on a jQuery selector and pass in an `options` object if you like.
+Call the `simplePopup()` function on a jQuery selector and pass in an `options` object if you like.
 
 ```javascript
     var options = {
@@ -18,7 +18,7 @@ Call the `simpleProduct()` function on a jQuery selector and pass in an `options
         closeCross: false
     };
 
-    $('a.open-popup-link').simpleProduct(options);
+    $('a.open-popup-link').simplePopup(options);
 ```
 
 **Option 1: inline text** Open simple text in the popup.
@@ -42,7 +42,7 @@ Call the `simpleProduct()` function on a jQuery selector and pass in an `options
         htmlSelector: "#popup",
     };
 
-    $('a.open-popup-link').simpleProduct(options);
+    $('a.open-popup-link').simplePopup(options);
 ```
 
 ## Installation
