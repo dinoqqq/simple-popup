@@ -41,6 +41,7 @@ When you don't like CSS to be injected with JS, make sure to set `inlineCss: fal
 | Option             | Values                 | Default | Description                                                                                                                                    |
 |--------------------|------------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | type               | "auto", "data", "html" | "auto"  | **data:** check for a "data-content" attribute on the selector <br>**html:** also option "htmlSelector" must be set<br> **auto:** try "data", try "html" and fail  |
+| htmlSelector       | CSS selector           | null    | For example "#popup" or ".popup-content". Works only when `type: html` or `type: auto` with no data attribute set.
 | height             | CSS value              | "auto"  | The height of the popup                                                                                                                        |
 | width              | CSS value              | "600px" | The width of the popup                                                                                                                         |
 | background         | CSS value              | "#fff"  | The background for the popup                                                                                                                   |
