@@ -11,6 +11,7 @@ A simple, clean popup written with jQuery, works out of the box. When you don't 
 
 ## Usage
 Call the `simpleProduct()` function on a jQuery selector and pass in an `options` object if you like.
+
 ```javascript
     var options = {
         "escapeKey": false,
@@ -21,20 +22,25 @@ Call the `simpleProduct()` function on a jQuery selector and pass in an `options
 ```
 
 ## Installation
-Include javascript: jQuery and jquery.simple-popup.js
+Include JS and CSS: [include jQuery](https://jquery.com/download/), `jquery.simple-popup.js` and `jquery.simple-popup.css`.
+
+```html
     <script src="jquery.js"></script>
     <script src="jquery.simple-popup.min.js"></script>
 
-Include CSS: 
     <link href="jquery.simple-popup.css" rel="stylesheet" type="text/css" />
+```
 
-When you don't like CSS to be injected with JS, make sure to set `inlineCss: false` in your options and add the following (config) file.
+When you don't like CSS to be injected with JS, make sure to set `inlineCss: false` in your options and add the following CSS (config) file.
+
+```html
     <link href="jquery.simple-popup.settings.css" rel="stylesheet" type="text/css" />
+```
 
 ## Options
 | Option             | Values                 | Default | Description                                                                                                                                    |
 |--------------------|------------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| type               | "auto", "data", "html" | "auto"  | data: check for a "data-content" attribute on the selector html: also option "htmlSelector" must be set auto: try "data", try "html" and fail  |
+| type               | "auto", "data", "html" | "auto"  | **data:** check for a "data-content" attribute on the selector <br>**html:** also option "htmlSelector" must be set<br> **auto:** try "data", try "html" and fail  |
 | height             | CSS value              | "auto"  | The height of the popup                                                                                                                        |
 | width              | CSS value              | "600px" | The width of the popup                                                                                                                         |
 | background         | CSS value              | "#fff"  | The background for the popup                                                                                                                   |
