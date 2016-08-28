@@ -57,6 +57,10 @@
             inlineCss: true,                // Inject CSS via JS
             escapeKey: true,                // Close popup when "escape" is pressed"
             closeCross: true,               // Display a closing cross
+            fadeInDuration: 0.3,            // The time to fade the popup in, in seconds
+            fadeInTimingFunction: "ease",   // The timing function used to fade the popup in
+            fadeOutDuration: 0.3,           // The time to fade the popup out, in seconds
+            fadeOutimingFunction: "ease",   // The timing function used to fade the popup out
             beforeOpen: function(){},
             afterOpen: function(){},
             beforeClose: function(){},
@@ -111,6 +115,13 @@
                 throw new Error("simplePopup: Please enter a \"backdrop\" value <= 1 of >= 0");
             }
 
+            if (settings.fadeInDuration < 0 || Number(settings.fadeInDuration) !== settings.fadeInDuration) {
+                throw new Error("simplePopup: Please enter a \"fadeInDuration\" number >= 0");
+            }
+
+            if (settings.fadeOutDuration < 0 || Number(settings.fadeOutDuration) !== settings.fadeOutDuration) {
+                throw new Error("simplePopup: Please enter a \"fadeOutDuration\" number >= 0");
+            }
         }
 
         /**
@@ -133,7 +144,6 @@
 
             // Type AUTO
             if (settings.type === "auto") {
-//console.log($this);
                 if($this.data("content")) {
                     return "data";
                 }
@@ -246,7 +256,16 @@
 
             // Use a timeout, else poor CSS is to slow to see the difference
             setTimeout(function() {
-                $("#simple-popup").removeClass("hide-it");
+                var html = $("#simple-popup");
+
+                // Set the fade in effect
+                if (settings.inlineCss) {
+                    html = setFadeTimingFunction(html, settings.fadeInTimingFunction);
+                    html = setFadeDuration(html, settings.fadeInDuration);
+                }
+
+                html.removeClass("hide-it");
+
             });
 
             // Poll to check if the popup is faded in
@@ -272,6 +291,12 @@
             // Call the beforeClose callback
             var html = $("#simple-popup");
             settings.beforeClose(html);
+
+            // Set the fade out effect
+            if (settings.inlineCss) {
+                html = setFadeTimingFunction(html, settings.fadeOutTimingFunction);
+                html = setFadeDuration(html, settings.fadeOutDuration);
+            }
 
             $("#simple-popup").addClass("hide-it");
 
@@ -342,7 +367,15 @@
          * 
          */
         function stopBackdrop() {
-            $("#simple-popup-backdrop").addClass("hide-it");
+            var backdrop = $("#simple-popup-backdrop");
+
+            // Set the fade out effect
+            if (settings.inlineCss) {
+                backdrop = setFadeTimingFunction(backdrop, settings.fadeOutTimingFunction);
+                backdrop = setFadeDuration(backdrop, settings.fadeOutDuration);
+            }
+
+            backdrop.addClass("hide-it");
 
             // Poll to check if the popup is faded out
             var intervalId = setInterval(function() {
@@ -379,7 +412,15 @@
 
             // Use a timeout, else poor CSS doesn"t see the difference
             setTimeout(function() {
-                $("#simple-popup-backdrop").removeClass("hide-it");
+                var backdrop = $("#simple-popup-backdrop");
+
+                // Set the fade in effect
+                if (settings.inlineCss) {
+                    backdrop = setFadeTimingFunction(backdrop, settings.fadeInTimingFunction);
+                    backdrop = setFadeDuration(backdrop, settings.fadeInDuration);
+                }
+
+                backdrop.removeClass("hide-it");
             });
         }
 
@@ -407,9 +448,43 @@
             $(document).unbind("keyup.escapeKey");
         }
 
+
+        /**
+         * setFadeTimingFunction
+         *
+         * @param {jQuery object} Object to set the timing function on
+         * @param {string} timingFunction The type of timing
+         * @returns {this} 
+         */
+        function setFadeTimingFunction(object, timingFunction) {
+            object.css("-webkit-transition-timing-function", timingFunction);
+            object.css("-moz-transition-timing-function", timingFunction);
+            object.css("-ms-transition-timing-function", timingFunction);
+            object.css("-o-transition-timing-function", timingFunction);
+            object.css("transition-timing-function", timingFunction);
+            return object;
+        }
+
+        /**
+         * setFadeDuration
+         *
+         * @param {jQuery object} Object to set the duration on
+         * @param {float} duration The duration of the fade
+         * @returns {this} 
+         */
+        function setFadeDuration(object, duration) {
+            object.css("-webkit-transition-duration", duration + "s");
+            object.css("-moz-transition-duration", duration + "s");
+            object.css("-ms-transition-duration", duration + "s");
+            object.css("-o-transition-duration", duration + "s");
+            object.css("transition-duration", duration + "s");
+            return object
+        }
+
         /**
          * Start the plugin
          *
+         * @returns {this} 
          */
         return init();
     }
