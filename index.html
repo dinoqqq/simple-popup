@@ -294,9 +294,13 @@
                     height: "400px",
                     closeCross: false,
                     escapeKey: false,
+                    fadeInTimingFunction: "steps(5, end)",
+                    fadeInDuration: 1.0,
+                    fadeOutTimingFunction: "ease-in-out",
+                    fadeOutDuration: 2.2,
                     background: "lightblue",
-                    backdrop: 0.9,
-                    backdropBackground: "black"
+                    backdrop: 0.8,
+                    backdropBackground: "red"
                 };
                 $("a.four").simplePopup(options);
             });
@@ -308,6 +312,10 @@
                     height: "400px",
                     closeCross: false,
                     escapeKey: false,
+                    fadeInTimingFunction: "steps(5, end)",
+                    fadeInDuration: 1.0,
+                    fadeOutTimingFunction: "ease-in-out",
+                    fadeOutDuration: 2.2,
                     background: "lightblue",
                     backdrop: 0.8,
                     backdropBackground: "red"
