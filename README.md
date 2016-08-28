@@ -46,6 +46,11 @@ Call the `simplePopup()` function on a jQuery selector and pass in an `options` 
     $('a.open-popup-link').simplePopup(options);
 ```
 
+## Browser support
+| Chrome | Firefox | IE | Edge | Safari |
+|--------|---------|----|------|--------|
+| 36+    | 16+     | 9+ | 13+  | 5.1+   |
+
 ## Installation
 Include JS and CSS: [include jQuery](https://jquery.com/download/), `jquery.simple-popup.js` and `jquery.simple-popup.css`.
 
