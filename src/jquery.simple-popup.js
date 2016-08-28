@@ -3,28 +3,24 @@
     "use strict";
 
     $.fn.simplePopup = function(options) {
-        /** 
+        /**
          * Javascript this
-         *
          */
         var that = this;
 
 
-        /** 
+        /**
          * Jquery DOM element, is set on click
-         *
          */
         var $this;
 
         /**
          * The data to be inserted in the popup
-         *
          */
         var data;
 
         /**
          * Determined type, based on type option (because we have possible value "auto")
-         *
          */
         var determinedType;
 
@@ -34,7 +30,6 @@
          * "auto"   Will first try "data", then "html" and else it will fail.
          * "data"   Looks at current HTML "data-content" attribute for content
          * "html"   Needs a selector of an existing HTML tag
-         *
          */
         var types = [
             "auto",
@@ -44,7 +39,6 @@
 
         /**
          * Default values
-         *
          */
         var settings = $.extend({
             type: "auto",                   // Type to get content
@@ -69,16 +63,15 @@
 
         /**
          * A selector string to filter the descendants of the selected elements that trigger the event.
-         *
          */
         var selector = this.selector;
 
         /**
          * init
-         * 
+         *
          * Set the onclick event, determine type, validate the settings, set the data and start popup.
-         * 
-         * @returns {this} 
+         *
+         * @returns {this} jQuery object
          */
         function init() {
             $(document).on("click.simplePopup", selector, function(e) {
@@ -102,6 +95,7 @@
          *
          * Check for some settings if they are correct
          *
+         * @returns {void}
          */
         function validateSettings() {
             if (settings.type !== "auto"
@@ -189,7 +183,7 @@
 
                 return data;
             }
-            
+
             return false;
         }
 
@@ -198,6 +192,7 @@
          *
          * Insert popup HTML, maybe bind escape key and maybe start the backdrop
          *
+         * @returns {void}
          */
         function startPopup() {
             if (settings.backdrop) {
@@ -216,6 +211,7 @@
          *
          * Create the popup HTML and append it to the body. Maybe set the CSS.
          *
+         * @returns {void}
          */
         function insertPopupHtml() {
             var content = $("<div/>", {
@@ -236,7 +232,7 @@
 
             bindClickPopup(html);
 
-            // When we have a closeCross, create the element, bind click close and append it to 
+            // When we have a closeCross, create the element, bind click close and append it to
             // the content
             if (settings.closeCross) {
                 var closeButton = $("<div/>", {
@@ -285,7 +281,8 @@
          * Stop the popup and remove it from the DOM. Because it can fade out, use and interval
          * to check if opacity has reached 0. Maybe remove backdrop and maybe unbind the escape
          * key
-         * 
+         *
+         * @returns {void}
          */
         function stopPopup() {
             // Call the beforeClose callback
@@ -323,10 +320,11 @@
         /**
          * bindClickPopup
          *
-         * When clicked outside the popup, close the popup. Use e.target to determine if 
+         * When clicked outside the popup, close the popup. Use e.target to determine if
          * "simple-popup" was clicked or "simple-popup-content"
          *
          * @param {string} html The html of the popup
+         * @returns {void}
          */
         function bindClickPopup(html) {
             $(html).on("click", function(e) {
@@ -342,6 +340,7 @@
          * When clicked on the close cross, close the popup
          *
          * @param {string} html The html of the popup
+         * @returns {void}
          */
         function bindClickClose(html) {
             $(html).on("click", function(e) {
@@ -354,6 +353,7 @@
          *
          * Insert the backdrop HTML
          *
+         * @returns {void}
          */
         function startBackdrop() {
             insertBackdropHtml();
@@ -363,8 +363,9 @@
          * stopBackdrop
          *
          * Stop the backdrop and remove it from the DOM. Because it can fade out, use and interval
-         * to check if opacity has reached 0. 
-         * 
+         * to check if opacity has reached 0.
+         *
+         * @returns {void}
          */
         function stopBackdrop() {
             var backdrop = $("#simple-popup-backdrop");
@@ -391,6 +392,7 @@
          *
          * Create the backdrop HTML and append it to the body. Maybe set the CSS.
          *
+         * @returns {void}
          */
         function insertBackdropHtml() {
             var content = $("<div/>", {
@@ -429,6 +431,7 @@
          *
          * Bind the escape key to stop popup
          *
+         * @returns {void}
          */
         function bindEscape() {
             $(document).on("keyup.escapeKey", function(e) {
@@ -443,6 +446,7 @@
          *
          * Unbind the escape key
          *
+         * @returns {void}
          */
         function unbindEscape() {
             $(document).unbind("keyup.escapeKey");
@@ -452,9 +456,9 @@
         /**
          * setFadeTimingFunction
          *
-         * @param {jQuery object} Object to set the timing function on
-         * @param {string} timingFunction The type of timing
-         * @returns {this} 
+         * @param {object} object - The object to set the timing function on
+         * @param {string} timingFunction - The type of timing
+         * @returns {object} The object with the time function set
          */
         function setFadeTimingFunction(object, timingFunction) {
             object.css("-webkit-transition-timing-function", timingFunction);
@@ -468,9 +472,9 @@
         /**
          * setFadeDuration
          *
-         * @param {jQuery object} Object to set the duration on
-         * @param {float} duration The duration of the fade
-         * @returns {this} 
+         * @param {object} object - The object to set the duration on
+         * @param {float} duration - The duration of the fade
+         * @returns {object} The object with the duration set
          */
         function setFadeDuration(object, duration) {
             object.css("-webkit-transition-duration", duration + "s");
@@ -478,14 +482,14 @@
             object.css("-ms-transition-duration", duration + "s");
             object.css("-o-transition-duration", duration + "s");
             object.css("transition-duration", duration + "s");
-            return object
+            return object;
         }
 
         /**
          * Start the plugin
          *
-         * @returns {this} 
+         * @returns {this} jQuery object
          */
         return init();
-    }
+    };
 }(jQuery));
