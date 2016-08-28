@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Popup Demo</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="dist/jquery.simple-popup.min.js"></script>
+    <link href="dist/jquery.simple-popup.min.css" rel="stylesheet" type="text/css" />
+    <link href="dist/jquery.simple-popup.settings.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        /* 
+         * OMG! You hear me talking about removing all inline CSS and stuff, and watch me put some CSS
+         * right in the HTML file here!!! Shameless...
+         *
+         */
+        body {
+            height: 100%;
+        }
+
+        h1 small {
+            font-size: 14px;
+        }
+
+        a,
+        strong,
+        code {
+            margin: 10px 0;
+            display: block;
+        }
+
+        code {
+            white-space: pre-wrap;
+            background: lightgrey;
+        }
+
+        .left,
+        .right {
+            width: 70%;
+            display: inline-block;
+            vertical-align: top;
+            border-top: 2px solid lightblue;
+        }
+
+        .left {
+            width: calc(30% - 4px);
+        }
+        
+        #popup1,
+        #popup2 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Popup Demo's <small>(Don't be scared by the looks, I am a coder, not a designer)</small></h1>
+    <div class="left">
+        <h2>Simple popup with inline text</h2>
+        <a class="one" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+            &lt;a class="one" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                $("a.one").simplePopup();
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("a.one").simplePopup();
+            });
+        </script>
+    </div>
+
+    <div class="left">
+        <h2>Simple popup with HTML block</h2>
+        <a class="two" href="#">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+            &lt;a class="two">Click&lt;/a>
+
+            &lt;div id=&quot;popup1&quot;&gt;
+                &lt;h1&gt;This is it!!&lt;/h1&gt;
+                &lt;p&gt;Here we go!&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Check this list&lt;/li&gt;        
+                    &lt;li&gt;Beautiful&lt;/li&gt;
+                    &lt;li&gt;...&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                $("a.two").simplePopup({ type: "html", htmlSelector: "#popup1" });
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("a.two").simplePopup({ type: "html", htmlSelector: "#popup1" });
+            });
+        </script>
+
+        <div id="popup1">
+            <h1>This is it!!</h1>
+            <p>Here we go!</p>
+            <ul>
+                <li>Check this list</li>
+                <li>Beautiful</li>
+                <li>...</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="left">
+        <h2>Simple popup with HTML block with too long content</h2>
+        <a href="#" class="three">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+
+         &lt;div id=&quot;popup2&quot;&gt;
+            &lt;h1&gt;This is it!!&lt;/h1&gt;
+             &lt;ul&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+                 &lt;li&gt;Wow this looks like long content&lt;/li&gt;
+             &lt;/ul&gt;
+         &lt;/div&gt;
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                $("a.three").simplePopup({ type: "html", htmlSelector: "#popup2" });
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("a.three").simplePopup({ type: "html", htmlSelector: "#popup2" });
+            });
+        </script>
+
+        <div id="popup2">
+            <h1>This is it!!</h1>
+            <ul>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+                <li>Wow this looks like long content</li>
+            </p>
+        </div>
+    </div>
+
+    <div class="left">
+        <h2>Simple popup with options</h2>
+        <p>Different height, different width, no close button, escape button disabled and backgrounds and opacities</p>
+        <a class="four" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+            &lt;a class="four" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                var options = {
+                    width: "800px",
+                    height: "400px",
+                    closeCross: false,
+                    escapeKey: false,
+                    background: "lightblue",
+                    backdrop: 0.9,
+                    backdropBackground: "black"
+                };
+                $("a.four").simplePopup(options);
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var options = {
+                    width: "800px",
+                    height: "400px",
+                    closeCross: false,
+                    escapeKey: false,
+                    background: "lightblue",
+                    backdrop: 0.8,
+                    backdropBackground: "red"
+                };
+                $("a.four").simplePopup(options);
+            });
+        </script>
+    </div>
+
+    <div class="left">
+        <h2>Simple popup with callbacks</h2>
+        <ul>
+            <li>beforeOpen: insert h1</li>
+            <li>afterOpen: change bg color</li>
+            <li>beforeClose: show alert</li>
+            <li>afterClose: show alert</li>
+        </ul>
+        <a class="five" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+            &lt;a class="five" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                var options = {
+                    beforeOpen: function(html) {
+                        html.find(".simple-popup-content").prepend("&lt;h1>Voila&lt;/h1>");
+                    },
+                    afterOpen: function(html) {
+                        html.find(".simple-popup-content").css("background", "lightgreen");
+                    },
+                    beforeClose: function(html) {
+                        alert("We are going to close now!");
+                    },
+                    afterClose: function() {
+                        alert("Closed now!");
+                    }
+                };
+                $("a.five").simplePopup(options);
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var options = {
+                    beforeOpen: function(html) {
+                        html.find(".simple-popup-content").prepend("<h1>Voila!</h1>");
+                    },
+                    afterOpen: function(html) {
+                        html.find(".simple-popup-content").css("background", "lightgreen");
+                    },
+                    beforeClose: function(html) {
+                        alert("We are going to close now!");
+                    },
+                    afterClose: function() {
+                        alert("Closed now!");
+                    }
+                };
+                $("a.five").simplePopup(options);
+            });
+        </script>
+    </div>
+
+</body>
