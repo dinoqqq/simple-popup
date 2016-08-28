@@ -1,5 +1,5 @@
-# Simple Popup (jQuery) 
-A simple, clean popup written with jQuery, works out of the box. When you don't like inline CSS or centering a popup with JS, like me, try it out.<br><br>
+# Simple Modal / Popup (jQuery) 
+A simple, clean jQuery modal / popup, works out of the box. When you don't like inline CSS or centering a popup with JS, like me, try it out.<br><br>
 [Check out the demo's](https://daankuijsten.github.io/simple-popup/)
 
 ## Features
@@ -7,7 +7,7 @@ A simple, clean popup written with jQuery, works out of the box. When you don't 
 - Smooth fade in / fade out effect (customizable)
 - Center vertically and horizontally with dynamic content (CSS only)
 - Escape key closes popup
-- Load popup content via "data" attribute on HTML or with JS selector to HTML
+- Load popup content via "data" attribute on HTML or with JS selector to HTML block
 - Optional: don't inject inline CSS with JS
 
 ## Browser support
@@ -21,7 +21,7 @@ Call the `simplePopup()` function on a jQuery selector and pass in an `options` 
 ```javascript
     var options = {
         escapeKey: false,
-        closeCross: false
+        fadeInDuration: 1.0
     };
 
     $('a.open-popup-link').simplePopup(options);
