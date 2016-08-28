@@ -254,7 +254,7 @@
                 if ($("#simple-popup").css("opacity") === "1") {
                     clearInterval(intervalId);
 
-                    // Call the afterClose callback
+                    // Call the afterOpen callback
                     settings.afterOpen(html);
                 }
             }, 100);
