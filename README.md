@@ -10,6 +10,11 @@ A simple, clean popup written with jQuery, works out of the box. When you don't 
 - Load popup content via "data" attribute on HTML or with JS selector to HTML
 - Optional: don't inject inline CSS with JS
 
+## Browser support
+| Chrome | Firefox | Internet Explorer | Edge | Safari | Netscape Navigator |
+|--------|---------|-------------------|------|--------|--------------------|
+| 36+    | 16+     | 9+                | 13+  | 5.1+   | Not supported      |
+
 ## Usage
 Call the `simplePopup()` function on a jQuery selector and pass in an `options` object if you like.
 
@@ -45,11 +50,6 @@ Call the `simplePopup()` function on a jQuery selector and pass in an `options` 
 
     $('a.open-popup-link').simplePopup(options);
 ```
-
-## Browser support
-| Chrome | Firefox | IE | Edge | Safari |
-|--------|---------|----|------|--------|
-| 36+    | 16+     | 9+ | 13+  | 5.1+   |
 
 ## Installation
 Include JS and CSS: [include jQuery](https://jquery.com/download/), `jquery.simple-popup.js` and `jquery.simple-popup.css`.
