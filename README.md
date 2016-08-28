@@ -75,3 +75,13 @@ When you don't like CSS to be injected with JS, make sure to set `inlineCss: fal
 | inlineCss          | true, false            | true    | Inject CSS via JS or not. When you choose `false` here, you need to include `jquery.simple-popup.settings.css`.                                |
 | escapeKey          | true, false            | true    | When pressing the escape key, the popup closes                                                                                                 |
 | closeCross         | true, false            | true    | Show the closing cross on the top right of the popup or not                                                                                    |
+
+## Callbacks
+| Function          | Parameters                                                                                                                                                                                  | Description                                                                                    |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| beforeOpen(html)  | **html**: jQuery object of the popup with id "#simple-popup". Content should be written in it's, child ".simple-popup-content", like this: `html.find(".simple-popup-content").append("");` | This function is called before the popup is going to open and before any fade in/out effects.  |
+| afterOpen(html)   | **html**: jQuery object of the popup with id "#simple-popup". Content should be written in it's, child ".simple-popup-content", like this: `html.find(".simple-popup-content").append("");` | This function is called after the popup is opened and after any fade in/out effects.           |
+| beforeClose(html) | **html**: jQuery object of the popup with id "#simple-popup". Content should be written in it's, child ".simple-popup-content", like this: `html.find(".simple-popup-content").append("");` | This function is called before the popup is going to close and before any fade in/out effects. |
+| afterClose        |                                                                                                                                                                                             | This function is called after the popup is closed and after any fade in/out effects.           |
+
+

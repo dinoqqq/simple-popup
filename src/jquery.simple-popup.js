@@ -57,9 +57,9 @@
             inlineCss: true,                // Inject CSS via JS
             escapeKey: true,                // Close popup when "escape" is pressed"
             closeCross: true,               // Display a closing cross
-            beforeOpen: function(content){},
-            afterOpen: function(content){},
-            beforeClose: function(content){},
+            beforeOpen: function(){},
+            afterOpen: function(){},
+            beforeClose: function(){},
             afterClose: function(){}
         }, options );
 
@@ -244,13 +244,20 @@
 
             $("body").append(html);
 
-            // Call the afterOpen callback
-            settings.afterOpen(html);
-
             // Use a timeout, else poor CSS is to slow to see the difference
             setTimeout(function() {
                 $("#simple-popup").removeClass("hide-it");
             });
+
+            // Poll to check if the popup is faded in
+            var intervalId = setInterval(function() {
+                if ($("#simple-popup").css("opacity") === "1") {
+                    clearInterval(intervalId);
+
+                    // Call the afterClose callback
+                    settings.afterOpen(html);
+                }
+            }, 100);
         }
 
         /**
@@ -263,7 +270,7 @@
          */
         function stopPopup() {
             // Call the beforeClose callback
-            var html = $("#simple-popup").html();
+            var html = $("#simple-popup");
             settings.beforeClose(html);
 
             $("#simple-popup").addClass("hide-it");
@@ -273,6 +280,9 @@
                 if ($("#simple-popup").css("opacity") === "0") {
                     $("#simple-popup").remove();
                     clearInterval(intervalId);
+
+                    // Call the afterClose callback
+                    settings.afterClose();
                 }
             }, 100);
 
@@ -283,9 +293,6 @@
             if (settings.escapeKey) {
                 unbindEscape();
             }
-
-            // Call the afterClose callback
-            settings.afterClose();
         }
 
         /**
