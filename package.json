@@ -1,0 +1,45 @@
+{
+  "name": "simple-popup-modal",
+  "version": "1.0.1",
+  "description": "A simple, clean jQuery modal / popup, works out of the box. When you don't like inline CSS or centering a popup with JS, like me, try it out.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-if": "^2.0.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "n": "^2.1.4",
+    "pump": "^1.0.1",
+    "run-sequence": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daankuijsten/simple-popup.git"
+  },
+  "keywords": [
+    "simple",
+    "simple-modal",
+    "simple-popup",
+    "popup",
+    "modal",
+    "jquery",
+    "ecosystem:jquery",
+    "jquery-plugin",
+    "center",
+    "horizontal",
+    "vertical",
+    "css"
+  ],
+  "author": "Daan Kuijsten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daankuijsten/simple-popup/issues"
+  },
+  "homepage": "https://github.com/daankuijsten/simple-popup#readme"
+}
