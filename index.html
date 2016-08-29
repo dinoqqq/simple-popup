@@ -383,4 +383,38 @@
         </script>
     </div>
 
+    <div class="left">
+        <h2>Simple popup with no CSS in HTML</h2>
+        <p>The file "dist/jquery.simple-popup.settings.css" is included and used</p>
+
+        <a class="six" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+            &lt;link href="dist/jquery.simple-popup.settings.css" rel="stylesheet" type="text/css" />
+
+            &lt;a class="six" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                var options = {
+                    inlineCss: false
+                };
+                $("a.six").simplePopup(options);
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var options = {
+                    inlineCss: false
+                };
+                $("a.six").simplePopup(options);
+            });
+        </script>
+    </div>
+
 </body>
