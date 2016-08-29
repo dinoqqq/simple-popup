@@ -13,7 +13,7 @@ A simple, clean jQuery modal / popup, works out of the box. When you don't like 
 ## Browser support
 | Chrome | Firefox | Internet Explorer                   | Edge | Safari | Netscape Navigator |
 |--------|---------|-------------------------------------|------|--------|--------------------|
-| 36+    | 16+     | 9<sup>No fade effects</sup>, 10, 11 | 13+  | 5.1+   | Not supported      |
+| 36+    | 16+     | 9 <sup>(no fade effects)</sup>, 10, 11 | 13+  | 5.1+   | Not supported      |
 
 ## Usage
 Call the `simplePopup()` function on a jQuery selector and pass in an `options` object if you like.
