@@ -67,12 +67,18 @@
         <strong>JS</strong>
         <code>
             $(document).ready(function() {
-                $("a.one").simplePopup();
+                $("a.one").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup();
+                });
             });
         </code>
         <script type="text/javascript">
             $(document).ready(function() {
-                $("a.one").simplePopup();
+                $("a.one").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup();
+                });
             });
         </script>
     </div>
@@ -101,12 +107,18 @@
         <strong>JS</strong>
         <code>
             $(document).ready(function() {
-                $("a.two").simplePopup({ type: "html", htmlSelector: "#popup1" });
+                $("a.two").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup({ type: "html", htmlSelector: "#popup1" });
+                });
             });
         </code>
         <script type="text/javascript">
             $(document).ready(function() {
-                $("a.two").simplePopup({ type: "html", htmlSelector: "#popup1" });
+                $("a.two").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup({ type: "html", htmlSelector: "#popup1" });
+                });
             });
         </script>
 
@@ -199,12 +211,18 @@
         <strong>JS</strong>
         <code>
             $(document).ready(function() {
-                $("a.three").simplePopup({ type: "html", htmlSelector: "#popup2" });
+                $("a.three").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup({ type: "html", htmlSelector: "#popup2" });
+                });
             });
         </code>
         <script type="text/javascript">
             $(document).ready(function() {
-                $("a.three").simplePopup({ type: "html", htmlSelector: "#popup2" });
+                $("a.three").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup({ type: "html", htmlSelector: "#popup2" });
+                });
             });
         </script>
 
@@ -302,7 +320,10 @@
                     backdrop: 0.8,
                     backdropBackground: "red"
                 };
-                $("a.four").simplePopup(options);
+                $("a.four").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup(options);
+                });
             });
         </code>
         <script type="text/javascript">
@@ -320,7 +341,10 @@
                     backdrop: 0.8,
                     backdropBackground: "red"
                 };
-                $("a.four").simplePopup(options);
+                $("a.four").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup(options);
+                });
             });
         </script>
     </div>
@@ -359,7 +383,10 @@
                         alert("Closed now!");
                     }
                 };
-                $("a.five").simplePopup(options);
+                $("a.five").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup(options);
+                });
             });
         </code>
         <script type="text/javascript">
@@ -378,7 +405,10 @@
                         alert("Closed now!");
                     }
                 };
-                $("a.five").simplePopup(options);
+                $("a.five").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup(options);
+                });
             });
         </script>
     </div>
@@ -404,7 +434,10 @@
                 var options = {
                     inlineCss: false
                 };
-                $("a.six").simplePopup(options);
+                $("a.six").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup(options);
+                });
             });
         </code>
         <script type="text/javascript">
@@ -412,7 +445,44 @@
                 var options = {
                     inlineCss: false
                 };
-                $("a.six").simplePopup(options);
+                $("a.six").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup(options);
+                });
+            });
+        </script>
+    </div>
+
+    <div class="left">
+        <h2>Simple popups, the same popup on 3 links</h2>
+        <a class="seven" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+        <a class="seven" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+        <a class="seven" href="#" data-content="Give me just a simple line of text or a quote please!">Click</a>
+    </div>
+
+    <div class="right">
+        <strong>HTML</strong>
+        <code>
+            &lt;a class="seven" href="#" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+            &lt;a class="seven" href="#" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+            &lt;a class="seven" href="#" data-content="Give me just a simple line of text or a quote please!">Click&lt;/a>
+        </code>
+
+        <strong>JS</strong>
+        <code>
+            $(document).ready(function() {
+                $("a.seven").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup();
+                });
+            });
+        </code>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("a.seven").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).simplePopup();
+                });
             });
         </script>
     </div>
