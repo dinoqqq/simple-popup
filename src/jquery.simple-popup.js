@@ -8,12 +8,6 @@
          */
         var that = this;
 
-
-        /**
-         * Jquery DOM element, is set on click
-         */
-        var $this;
-
         /**
          * The data to be inserted in the popup
          */
@@ -74,18 +68,12 @@
          * @returns {this} jQuery object
          */
         function init() {
-            $(document).on("click.simplePopup", selector, function(e) {
-                e.preventDefault();
+            validateSettings();
 
-                $this = $(this);
+            determinedType = determineType();
+            data = setData();
 
-                validateSettings();
-
-                determinedType = determineType();
-                data = setData();
-
-                startPopup();
-            });
+            startPopup();
 
             return that;
         }
@@ -138,7 +126,7 @@
 
             // Type AUTO
             if (settings.type === "auto") {
-                if($this.data("content")) {
+                if(that.data("content")) {
                     return "data";
                 }
 
@@ -175,7 +163,7 @@
 
             // Type DATA
             if (determinedType === "data") {
-                data = $this.data("content");
+                data = that.data("content");
 
                 if (!data) {
                     throw new Error("simplePopup: for \"type: data\" the \"data-content\" attribute can not be empty");
@@ -485,11 +473,6 @@
             return object;
         }
 
-        /**
-         * Start the plugin
-         *
-         * @returns {this} jQuery object
-         */
         return init();
     };
 }(jQuery));

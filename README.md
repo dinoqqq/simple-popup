@@ -24,7 +24,10 @@ Call the `simplePopup()` function on a jQuery selector and pass in an `options` 
         fadeInDuration: 1.0
     };
 
-    $('a.open-popup-link').simplePopup(options);
+    $("a.open-popup-link").on("click", function(e) {
+        e.preventDefault();
+        $(this).simplePopup(options);
+    });
 ```
 
 **Option 1: inline text** Open simple text in the popup.
@@ -48,7 +51,10 @@ Call the `simplePopup()` function on a jQuery selector and pass in an `options` 
         htmlSelector: "#popup",
     };
 
-    $('a.open-popup-link').simplePopup(options);
+    $("a.open-popup-link").on("click", function(e) {
+        e.preventDefault();
+        $(this).simplePopup(options);
+    });
 ```
 
 ## Installation
