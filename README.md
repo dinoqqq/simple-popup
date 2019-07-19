@@ -1,6 +1,6 @@
 # Simple Modal / Popup (jQuery) 
 A simple, clean jQuery modal / popup, works out of the box. When you don't like inline CSS or centering a popup with JS, like me, try it out.<br><br>
-[Check out the demo's](https://daankuijsten.github.io/simple-popup/)
+[Check out the demo's](https://dinoqqq.github.io/simple-popup/)
 
 ## Features
 - Flexible and configurable
